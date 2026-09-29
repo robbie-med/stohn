@@ -1,0 +1,112 @@
+{
+  "version": "2026.09.28",
+  "comment": "Deterministic red-flag rules. Escalation-only: every level sends the user toward care; there is deliberately no 'ok' level. Levels, most to least urgent: call > er > contact. Each rule cites source ids from data/evidence.json. Conditions: {field, eq|gte|lte|in}, {any:[...]}, {all:[...]}.",
+  "levels": ["call", "er", "contact"],
+  "rules": [
+    {
+      "id": "faint",
+      "scope": "checkin",
+      "level": "call",
+      "when": { "field": "faint", "eq": true },
+      "sources": ["patientinfo"]
+    },
+    {
+      "id": "infection",
+      "scope": "checkin",
+      "level": "er",
+      "when": { "any": [
+        { "field": "fever", "eq": true },
+        { "field": "tempC", "gte": 38.0 },
+        { "field": "chills", "eq": true }
+      ] },
+      "sources": ["aua2026surg", "eau", "patientinfo"]
+    },
+    {
+      "id": "painUncontrolled",
+      "scope": "checkin",
+      "level": "er",
+      "when": { "field": "painUncontrolled", "eq": true },
+      "sources": ["patientinfo"]
+    },
+    {
+      "id": "vomiting",
+      "scope": "checkin",
+      "level": "er",
+      "when": { "field": "vomiting", "eq": true },
+      "sources": ["patientinfo"]
+    },
+    {
+      "id": "cantUrinate",
+      "scope": "checkin",
+      "level": "er",
+      "when": { "field": "cantUrinate", "eq": true },
+      "sources": ["patientinfo"]
+    },
+
+    {
+      "id": "feverNow",
+      "scope": "safety",
+      "level": "er",
+      "when": { "field": "feverNow", "eq": true },
+      "sources": ["aua2026surg", "eau", "patientinfo"]
+    },
+    {
+      "id": "pregnant",
+      "scope": "safety",
+      "level": "contact",
+      "outOfScope": true,
+      "when": { "field": "pregnant", "eq": true },
+      "sources": ["patientinfo"]
+    },
+    {
+      "id": "solitary",
+      "scope": "safety",
+      "level": "contact",
+      "outOfScope": true,
+      "when": { "field": "solitary", "eq": true },
+      "sources": ["eau"]
+    },
+    {
+      "id": "transplant",
+      "scope": "safety",
+      "level": "contact",
+      "outOfScope": true,
+      "when": { "field": "transplant", "eq": true },
+      "sources": ["patientinfo"]
+    },
+    {
+      "id": "ckd",
+      "scope": "safety",
+      "level": "contact",
+      "outOfScope": true,
+      "when": { "field": "ckd", "eq": true },
+      "sources": ["patientinfo"]
+    },
+    {
+      "id": "minor",
+      "scope": "safety",
+      "level": "contact",
+      "outOfScope": true,
+      "when": { "field": "minor", "eq": true },
+      "sources": ["aua2026med"]
+    },
+
+    {
+      "id": "fourWeeks",
+      "scope": "course",
+      "level": "contact",
+      "when": { "all": [
+        { "field": "passedConfirmed", "eq": false },
+        { "field": "daysElapsed", "gte": 28 }
+      ] },
+      "sources": ["aua2026surg", "miller1999"]
+    },
+    {
+      "id": "persist",
+      "scope": "course",
+      "level": "contact",
+      "when": { "field": "persistWindowExceeded", "eq": true },
+      "sources": ["localprotocol"]
+    }
+  ]
+}

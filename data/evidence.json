@@ -1,0 +1,267 @@
+{
+  "version": "2026.09.28",
+  "reviewed": "2026-09-28",
+  "reviewer": null,
+  "sources": {
+    "coll2002": {
+      "short": "Coll 2002",
+      "cite": "Coll DM, Varanelli MJ, Smith RC. Relationship of spontaneous passage of ureteral calculi to stone size and location as revealed by unenhanced helical CT. AJR Am J Roentgenol. 2002;178(1):101-103.",
+      "pmid": "11756098",
+      "doi": "10.2214/ajr.178.1.1780101"
+    },
+    "jendeberg2017": {
+      "short": "Jendeberg 2017",
+      "cite": "Jendeberg J, Geijer H, Alshamari M, Cierzniak B, Lidén M. Size matters: the width and location of a ureteral stone accurately predict the chance of spontaneous passage. Eur Radiol. 2017;27(11):4775-4785.",
+      "pmid": "28593428",
+      "doi": "10.1007/s00330-017-4852-6"
+    },
+    "miller1999": {
+      "short": "Miller & Kane 1999",
+      "cite": "Miller OF, Kane CJ. Time to stone passage for observed ureteral calculi: a guide for patient education. J Urol. 1999;162(3 Pt 1):688-690.",
+      "pmid": "10458343",
+      "doi": "10.1097/00005392-199909010-00014"
+    },
+    "suspend2015": {
+      "short": "SUSPEND 2015",
+      "cite": "Pickard R, Starr K, MacLennan G, et al. Medical expulsive therapy in adults with ureteric colic: a multicentre, randomised, placebo-controlled trial. Lancet. 2015;386(9991):341-349.",
+      "pmid": "25998582",
+      "doi": "10.1016/S0140-6736(15)60933-3"
+    },
+    "stone2018": {
+      "short": "STONE 2018",
+      "cite": "Meltzer AC, Burrows PK, Wolfson AB, et al. Effect of tamsulosin on passage of symptomatic ureteral stones: a randomized clinical trial. JAMA Intern Med. 2018;178(8):1051-1057.",
+      "pmid": "29913020",
+      "doi": "10.1001/jamainternmed.2018.2259"
+    },
+    "hollingsworth2016": {
+      "short": "Hollingsworth 2016",
+      "cite": "Hollingsworth JM, Canales BK, Rogers MA, et al. Alpha blockers for treatment of ureteric stones: systematic review and meta-analysis. BMJ. 2016;355:i6112.",
+      "pmid": "27908918",
+      "doi": "10.1136/bmj.i6112"
+    },
+    "rule2014": {
+      "short": "ROKS 2014",
+      "cite": "Rule AD, Lieske JC, Li X, Melton LJ 3rd, Krambeck AE, Bergstralh EJ. The ROKS nomogram for predicting a second symptomatic stone episode. J Am Soc Nephrol. 2014;25(12):2878-2886.",
+      "pmid": "25104803",
+      "doi": "10.1681/ASN.2013091011"
+    },
+    "iremashvili2019": {
+      "short": "Iremashvili 2019",
+      "cite": "Iremashvili V, Li S, Penniston KL, Best SL, Hedican SP, Nakada SY. External validation of the Recurrence of Kidney Stone nomogram in a surgical cohort. J Endourol. 2019;33(6):475-479.",
+      "pmid": "30880452",
+      "doi": "10.1089/end.2018.0893"
+    },
+    "borghi1996": {
+      "short": "Borghi 1996",
+      "cite": "Borghi L, Meschi T, Amato F, Briganti A, Novarini A, Giannini A. Urinary volume, water and recurrences in idiopathic calcium nephrolithiasis: a 5-year randomized prospective study. J Urol. 1996;155(3):839-843.",
+      "pmid": "8583588",
+      "doi": null
+    },
+    "borghi2002": {
+      "short": "Borghi 2002",
+      "cite": "Borghi L, Schianchi T, Meschi T, et al. Comparison of two diets for the prevention of recurrent stones in idiopathic hypercalciuria. N Engl J Med. 2002;346(2):77-84.",
+      "pmid": "11784873",
+      "doi": "10.1056/NEJMoa010369"
+    },
+    "push2026": {
+      "short": "PUSH 2026",
+      "cite": "Desai AC, Maalouf NM, Harper JD, et al. Prevention of urinary stones with hydration: a randomised clinical trial of an adherence intervention. Lancet. 2026;407(10534):1171-1181.",
+      "pmid": "41864748",
+      "doi": "10.1016/S0140-6736(25)02637-6"
+    },
+    "aua2014": {
+      "short": "AUA 2014",
+      "cite": "Pearle MS, Goldfarb DS, Assimos DG, et al. Medical management of kidney stones: AUA guideline. J Urol. 2014;192(2):316-324.",
+      "pmid": "24857648",
+      "doi": "10.1016/j.juro.2014.05.006"
+    },
+    "aua2026surg": {
+      "short": "AUA 2026 (surgical)",
+      "cite": "American Urological Association / Endourological Society. Surgical Management of Stones guideline, 2026 amendment (released 20 Nov 2025). Statements 7-9 (medical expulsive therapy, confirming passage) and 38 (urgent drainage for obstruction with suspected infection).",
+      "url": "https://www.auanet.org/guidelines-and-quality/guidelines",
+      "secondary": true
+    },
+    "aua2026med": {
+      "short": "AUA 2026 (medical)",
+      "cite": "American Urological Association. Medical Management of Kidney Stones guideline, 2026 (released 30 Jul 2026).",
+      "url": "https://www.auanet.org/guidelines-and-quality/guidelines",
+      "secondary": true
+    },
+    "eau": {
+      "short": "EAU Urolithiasis",
+      "cite": "European Association of Urology. EAU Guidelines on Urolithiasis (current edition).",
+      "url": "https://uroweb.org/guidelines/urolithiasis"
+    },
+    "scales2015": {
+      "short": "Scales 2015",
+      "cite": "Scales CD Jr, Lin L, Saigal CS, et al. Emergency department revisits for patients with kidney stones in California. Acad Emerg Med. 2015;22(4):468-474.",
+      "pmid": "25779695",
+      "doi": "10.1111/acem.12632"
+    },
+    "moussa2019": {
+      "short": "Moussa 2019",
+      "cite": "Moussa M, Abou Chakra M. Patient's perception of kidney stone prevention within the emergency department and its adherence factors: a single institution study. BMC Emerg Med. 2019;19(1):48.",
+      "pmid": "31477062",
+      "doi": "10.1186/s12873-019-0263-0"
+    },
+    "philipmckenzie2020": {
+      "short": "Philip-McKenzie 2020",
+      "cite": "Philip-McKenzie Y, Jamnadass E, Hameed BZ, et al. A content analysis of 'Water Apps' and prevention of urological diseases: do apps really help? Cent European J Urol. 2020;73(2):187-192.",
+      "pmid": "32782839",
+      "doi": "10.5173/ceju.2020.0136"
+    },
+    "patientinfo": {
+      "short": "Patient information consensus",
+      "cite": "Return-to-care advice shared across hospital and guideline patient leaflets (fever, uncontrolled pain, repeated vomiting, inability to urinate, fainting). Where fever thresholds differ (38.0 °C / 100.4 °F vs 38.6 °C / 101.5 °F), this app uses the lower one."
+    },
+    "localprotocol": {
+      "short": "Your discharge instructions",
+      "cite": "Some emergency departments tell patients to be rechecked if symptoms persist beyond a set time (for example 48 hours). This is a local protocol, so the app only uses it if you enter it in Settings."
+    }
+  },
+
+  "passage": {
+    "minSizeMm": 0.5,
+    "maxSizeMm": 30,
+    "collSize": {
+      "source": "coll2002",
+      "n": 172,
+      "measure": "maximum diameter on axial CT",
+      "bands": [
+        { "label": "1 mm", "lt": 1.5, "pct": 87 },
+        { "label": "2–4 mm", "gte": 1.5, "lt": 4.5, "pct": 76 },
+        { "label": "5–7 mm", "gte": 4.5, "lt": 7, "pct": 60 },
+        { "label": "7–9 mm", "gte": 7, "lte": 9, "pct": 48 },
+        { "label": "> 9 mm", "gt": 9, "pct": 25 }
+      ]
+    },
+    "collLocation": {
+      "source": "coll2002",
+      "values": { "proximal": 48, "mid": 60, "distal": 75, "uvj": 79 }
+    },
+    "jendebergWidth": {
+      "source": "jendeberg2017",
+      "n": 392,
+      "measure": "stone width on CT",
+      "windowWeeks": 20,
+      "bands": [
+        { "label": "0–2 mm", "lt": 2.5, "pct": 98 },
+        { "label": "3 mm", "gte": 2.5, "lt": 3.5, "pct": 98 },
+        { "label": "4 mm", "gte": 3.5, "lt": 4.5, "pct": 81 },
+        { "label": "5 mm", "gte": 4.5, "lt": 5.5, "pct": 65 },
+        { "label": "6 mm", "gte": 5.5, "lt": 6.5, "pct": 33 },
+        { "label": "≥ 6.5 mm", "gte": 6.5, "pct": 9 }
+      ]
+    },
+    "millerTime": {
+      "source": "miller1999",
+      "n": 75,
+      "bands": [
+        { "label": "≤ 2 mm", "lte": 2, "meanDays": 8.2, "p95Days": 31, "interventionPct": 4.8 },
+        { "label": "2–4 mm", "gt": 2, "lt": 4, "meanDays": 12.2, "p95Days": 40, "interventionPct": 17 },
+        { "label": "4–6 mm", "gte": 4, "lte": 6, "meanDays": 22.1, "p95Days": 39, "interventionPct": 50 }
+      ]
+    }
+  },
+
+  "met": {
+    "maxSizeMm": 10,
+    "windowDays": 30,
+    "sources": ["aua2026surg", "suspend2015", "stone2018", "hollingsworth2016"]
+  },
+
+  "optionsQuestionMinMm": 5,
+
+  "highRisk": {
+    "source": "eau",
+    "factors": ["youngOnset", "familyHistory", "stoneType", "solitary", "hyperpara", "metabolic", "bowel", "sarcoid", "genetic", "anatomy"]
+  },
+
+  "sections": [
+    {
+      "id": "passage",
+      "facts": [
+        { "key": "collSize", "sources": ["coll2002"], "vars": {
+          "s1": "$passage.collSize.bands.0.pct", "s2": "$passage.collSize.bands.1.pct", "s3": "$passage.collSize.bands.2.pct",
+          "s4": "$passage.collSize.bands.3.pct", "s5": "$passage.collSize.bands.4.pct" } },
+        { "key": "collLoc", "sources": ["coll2002"], "vars": {
+          "p": "$passage.collLocation.values.proximal", "m": "$passage.collLocation.values.mid",
+          "d": "$passage.collLocation.values.distal", "u": "$passage.collLocation.values.uvj" } },
+        { "key": "jend", "sources": ["jendeberg2017"], "vars": {
+          "a": "$passage.jendebergWidth.bands.1.pct", "b": "$passage.jendebergWidth.bands.2.pct", "c": "$passage.jendebergWidth.bands.3.pct",
+          "d": "$passage.jendebergWidth.bands.4.pct", "e": "$passage.jendebergWidth.bands.5.pct" } }
+      ]
+    },
+    {
+      "id": "time",
+      "facts": [
+        { "key": "miller", "sources": ["miller1999"], "vars": {
+          "m1": "$passage.millerTime.bands.0.meanDays", "m2": "$passage.millerTime.bands.1.meanDays", "m3": "$passage.millerTime.bands.2.meanDays",
+          "p1": "$passage.millerTime.bands.0.p95Days", "p2": "$passage.millerTime.bands.1.p95Days", "p3": "$passage.millerTime.bands.2.p95Days" } },
+        { "key": "millerInt", "sources": ["miller1999"], "vars": { "pct": "$passage.millerTime.bands.2.interventionPct" } }
+      ]
+    },
+    {
+      "id": "met",
+      "facts": [
+        { "key": "metAua", "sources": ["aua2026surg"], "vars": { "mm": "$met.maxSizeMm", "days": "$met.windowDays" } },
+        { "key": "suspend", "sources": ["suspend2015"], "vars": { "pct": 80 } },
+        { "key": "stoneTrial", "sources": ["stone2018"], "vars": { "mm": 3.8, "t": 50, "p": 47 } },
+        { "key": "meta", "sources": ["hollingsworth2016"], "vars": { "rr": 1.49 } }
+      ]
+    },
+    {
+      "id": "redflags",
+      "facts": [
+        { "key": "infection", "sources": ["aua2026surg", "eau"], "vars": {} },
+        { "key": "returnSigns", "sources": ["patientinfo"], "vars": {} },
+        { "key": "revisit", "sources": ["scales2015"], "vars": { "pct": 11 } }
+      ]
+    },
+    {
+      "id": "recurrence",
+      "facts": [
+        { "key": "roks", "sources": ["rule2014"], "vars": { "y2": 11, "y5": 20, "y10": 31, "y15": 39, "lo": 12, "hi": 56 } },
+        { "key": "roksValid", "sources": ["iremashvili2019"], "vars": { "auc2": 0.655, "auc5": 0.605 } }
+      ]
+    },
+    {
+      "id": "fluid",
+      "facts": [
+        { "key": "fluidTarget", "sources": ["aua2014", "aua2026med", "eau"], "vars": { "l": 2.5 } },
+        { "key": "borghiFluid", "sources": ["borghi1996"], "vars": { "a": 12, "b": 27 } },
+        { "key": "push", "sources": ["push2026"], "vars": { "a": 19, "b": 20 } }
+      ]
+    },
+    {
+      "id": "diet",
+      "facts": [
+        { "key": "borghiDiet", "sources": ["borghi2002"], "vars": { "a": 12, "b": 23 } },
+        { "key": "auaDiet", "sources": ["aua2014"], "vars": {} }
+      ]
+    },
+    {
+      "id": "testing",
+      "facts": [
+        { "key": "analysis", "sources": ["eau"], "vars": {} },
+        { "key": "urine24", "sources": ["aua2014", "aua2026med"], "vars": {} }
+      ]
+    },
+    {
+      "id": "context",
+      "facts": [
+        { "key": "edInstr", "sources": ["moussa2019"], "vars": { "a": 68, "b": 82 } },
+        { "key": "apps", "sources": ["philipmckenzie2020"], "vars": { "n": 51 } }
+      ]
+    }
+  ],
+
+  "links": [
+    { "id": "ucfStones", "url": "https://www.urologyhealth.org/urology-a-z/k/kidney-stones", "lang": "en" },
+    { "id": "ucfFind", "url": "https://www.urologyhealth.org/find-a-urologist", "lang": "en" },
+    { "id": "auaGuidelines", "url": "https://www.auanet.org/guidelines-and-quality/guidelines", "lang": "en" },
+    { "id": "eauGuidelines", "url": "https://uroweb.org/guidelines/urolithiasis", "lang": "en" },
+    { "id": "kua", "url": "https://www.urology.or.kr", "lang": "ko" },
+    { "id": "kdca", "url": "https://health.kdca.go.kr", "lang": "ko" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "stohn",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["scripts/serve.py"],
+      "port": 3110
+    }
+  ]
+}

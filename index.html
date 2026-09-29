@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#121412">
+  <meta name="description" content="First Stone: a private, no-account companion for the first month after a first kidney stone. Explains your CT report with published passage data, runs a daily danger-sign check, and prepares questions for your follow-up. English and 한국어.">
+  <title>First Stone</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="css/app.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip sr-only-focusable" href="#main">Skip to content</a>
+  <header class="top">
+    <div class="brand">
+      <img src="icon.svg" alt="" width="32" height="32">
+      <div>
+        <p class="name" id="app-name">First Stone</p>
+        <p class="tagline" id="app-tagline"></p>
+      </div>
+    </div>
+    <div class="lang-switch" id="lang-switch" role="group"></div>
+  </header>
+  <div class="banner" id="banner" role="note">
+    <p><span id="banner-text">Education only — not a diagnosis.</span>
+      <a class="banner-call" id="banner-call" href="tel:911">Call 911</a></p>
+    <button type="button" class="banner-hide" id="banner-hide">Hide</button>
+  </div>
+
+  <main id="main" tabindex="-1">
+    <noscript><p>First Stone needs JavaScript to run. All data stays on your device.</p></noscript>
+  </main>
+
+  <nav class="bottom-nav" id="nav">
+    <a href="#/today" data-nav="today"><span>Today</span></a>
+    <a href="#/checkin" data-nav="checkin"><span>Check-in</span></a>
+    <a href="#/stone" data-nav="stone"><span>My stone</span></a>
+    <a href="#/visit" data-nav="visit"><span>Visit</span></a>
+    <a href="#/more" data-nav="more"><span>More</span></a>
+  </nav>
+
+  <dialog id="escalation" class="escalation"></dialog>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "First Stone — kidney stone companion",
+  "short_name": "First Stone",
+  "description": "A private, no-account companion for the first month after a first kidney stone. English and 한국어.",
+  "id": "./",
+  "start_url": "./#/today",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#121412",
+  "theme_color": "#121412",
+  "categories": ["health", "medical", "education"],
+  "lang": "en",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

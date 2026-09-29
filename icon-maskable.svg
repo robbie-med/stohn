@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="First Stone">
+  <rect width="512" height="512" rx="0" fill="#121412"/>
+  <!-- sprout -->
+  <g transform="translate(51.2 51.2) scale(0.8)"><path d="M256 250 C 256 200 256 170 256 150" fill="none" stroke="#7fd18b" stroke-width="18" stroke-linecap="round"/>
+  <path d="M256 176 C 222 176 196 150 190 112 C 228 112 254 138 256 176 Z" fill="#7fd18b"/>
+  <path d="M256 160 C 286 160 314 136 322 98 C 284 98 258 122 256 160 Z" fill="#a8e6b1"/>
+  <!-- pebble -->
+  <path d="M120 330 C 108 276 160 236 238 238 C 322 240 398 262 400 326 C 402 384 340 414 262 414 C 180 414 132 386 120 330 Z" fill="#8f9a8c"/>
+  <path d="M160 318 C 170 290 204 274 246 274" fill="none" stroke="#c3cbbf" stroke-width="14" stroke-linecap="round" opacity="0.8"/></g>
+</svg>
