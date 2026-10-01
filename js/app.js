@@ -6,7 +6,7 @@ import * as I from './i18n.js';
 import * as S from './store.js';
 import * as B from './backup.js';
 
-export const APP_VERSION = '1.3.0';
+export const APP_VERSION = '1.3.1';
 const REPO_URL = 'https://github.com/robbie-med/stohn';
 
 const state = {
