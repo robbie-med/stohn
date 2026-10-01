@@ -6,7 +6,7 @@ import * as I from './i18n.js';
 import * as S from './store.js';
 import * as B from './backup.js';
 
-export const APP_VERSION = '1.3.1';
+export const APP_VERSION = '1.3.2';
 const REPO_URL = 'https://github.com/robbie-med/stohn';
 
 const state = {
@@ -15,7 +15,7 @@ const state = {
   profile: null,
   stone: {},
   settings: {},
-  visit: { excluded: [], custom: [], highRisk: {} },
+  visit: { excluded: [], custom: [], highRisk: {}, asked: [] },
   checkins: [],
   persistent: true,
   t: null,
@@ -565,6 +565,18 @@ function questionText(q, t) {
   return t(`q.${q.id}`);
 }
 
+// Suggested (minus removed) then the user's own, as one list of rows.
+function visitQuestions(t) {
+  const v = state.visit;
+  const asked = new Set(v.asked || []);
+  return [
+    ...currentQuestions()
+      .filter((q) => !v.excluded.includes(q.id))
+      .map((q) => ({ id: q.id, text: questionText(q, t), emphasis: !!(q.vars && q.vars.emphasis), asked: asked.has(q.id), custom: false })),
+    ...v.custom.map((c) => ({ id: c.id, text: c.text, emphasis: false, asked: asked.has(c.id), custom: true })),
+  ];
+}
+
 function currentQuestions() {
   return E.buildQuestions({ stone: state.stone, highRisk: state.visit.highRisk, checkins: state.checkins, ev: state.ev, rulesDoc: state.rules });
 }
@@ -572,7 +584,9 @@ function currentQuestions() {
 views.visit = () => {
   const { t, ev } = state;
   const v = state.visit;
-  const qs = currentQuestions();
+  const rows = visitQuestions(t);
+  const removedCount = currentQuestions().filter((q) => v.excluded.includes(q.id)).length;
+  const askedCount = rows.filter((r) => r.asked).length;
   const hrCount = ev.highRisk.factors.filter((f) => v.highRisk[f]).length;
   return {
     html: html`
@@ -580,11 +594,15 @@ views.visit = () => {
       <p class="muted">${t('visit.intro')}</p>
       <section class="sec">
         <h2>${t('visit.questions')}</h2>
+        <p class="muted small" id="asked-count" aria-live="polite">${t('visit.progress', { n: askedCount, total: rows.length })}</p>
         <ul class="checklist">
-          ${qs.map((q) => html`<li><label class="toggle"><input type="checkbox" data-q="${q.id}" ${v.excluded.includes(q.id) ? '' : raw('checked')}>
-            <span>${questionText(q, t)}${q.vars && q.vars.emphasis ? html`<br><small class="accent">${t('visit.emphasis')}</small>` : ''}</span></label></li>`)}
-          ${v.custom.map((c) => html`<li class="custom"><span>${c.text}</span> <button class="btn btn-small btn-ghost" data-rm="${c.id}">${t('visit.remove')}</button></li>`)}
+          ${rows.map((r) => html`<li class="qrow ${r.asked ? 'asked' : ''}">
+            <label class="toggle"><input type="checkbox" data-asked="${r.id}" ${r.asked ? raw('checked') : ''}>
+              <span>${r.text}${r.emphasis ? html`<small class="accent">${t('visit.emphasis')}</small>` : ''}</span></label>
+            <button type="button" class="qrm" data-rmq="${r.id}" data-custom="${r.custom ? '1' : ''}" aria-label="${t('visit.removeOne', { q: r.text })}">${t('visit.remove')}</button>
+          </li>`)}
         </ul>
+        ${removedCount ? html`<button type="button" class="btn btn-ghost btn-small" id="restore-q">${t('visit.restore', { n: removedCount })}</button>` : ''}
         <form id="custom-form" class="row">
           <label class="field grow"><span class="sr-only">${t('visit.custom')}</span>
             <input type="text" name="text" maxlength="300" placeholder="${t('visit.custom')}"></label>
@@ -611,23 +629,37 @@ views.visit = () => {
       </section>
       <a class="btn btn-primary btn-block" href="#/summary">${t('visit.summaryBtn')}</a>`,
     mount(root) {
-      $$('[data-q]', root).forEach((cb) =>
+      // Ticking marks a question as asked; update in place so the list doesn't jump.
+      $$('[data-asked]', root).forEach((cb) =>
         cb.addEventListener('change', async () => {
-          const id = cb.dataset.q;
-          v.excluded = cb.checked ? v.excluded.filter((x) => x !== id) : [...new Set([...v.excluded, id])];
+          const id = cb.dataset.asked;
+          v.asked = cb.checked ? [...new Set([...v.asked, id])] : v.asked.filter((x) => x !== id);
+          cb.closest('.qrow').classList.toggle('asked', cb.checked);
+          const total = $$('[data-asked]', root).length;
+          $('#asked-count', root).textContent = t('visit.progress', { n: $$('[data-asked]:checked', root).length, total });
           await saveKV('visit');
         }),
       );
-      $$('[data-hr]', root).forEach((cb) =>
-        cb.addEventListener('change', async () => {
-          v.highRisk = { ...v.highRisk, [cb.dataset.hr]: cb.checked };
+      $$('[data-rmq]', root).forEach((b) =>
+        b.addEventListener('click', async () => {
+          const id = b.dataset.rmq;
+          if (b.dataset.custom) v.custom = v.custom.filter((c) => c.id !== id);
+          else v.excluded = [...new Set([...v.excluded, id])];
+          v.asked = v.asked.filter((x) => x !== id);
           await saveKV('visit');
           render();
         }),
       );
-      $$('[data-rm]', root).forEach((b) =>
-        b.addEventListener('click', async () => {
-          v.custom = v.custom.filter((c) => c.id !== b.dataset.rm);
+      const restore = $('#restore-q', root);
+      if (restore)
+        restore.addEventListener('click', async () => {
+          v.excluded = [];
+          await saveKV('visit');
+          render();
+        });
+      $$('[data-hr]', root).forEach((cb) =>
+        cb.addEventListener('change', async () => {
+          v.highRisk = { ...v.highRisk, [cb.dataset.hr]: cb.checked };
           await saveKV('visit');
           render();
         }),
@@ -651,7 +683,7 @@ views.summary = () => {
   const s = state.stone;
   const ex = E.explain(s, state.ev);
   const v = state.visit;
-  const qs = currentQuestions().filter((q) => !v.excluded.includes(q.id));
+  const qrows = visitQuestions(t);
   const hr = state.ev.highRisk.factors.filter((f) => v.highRisk[f]);
   const yn = (x) => (x === 'yes' ? t('common.yes') : x === 'no' ? t('common.no') : x === 'unsure' ? t('common.unsure') : t('sum.none'));
   const ready = I.readyLocales();
@@ -683,7 +715,7 @@ views.summary = () => {
         </table>
 
         <h3>${t('sum.questions')}</h3>
-        <ol>${qs.map((q) => html`<li>${questionText(q, t)}</li>`)}${v.custom.map((c) => html`<li>${c.text}</li>`)}</ol>
+        <ul class="ticks">${qrows.map((r) => html`<li class="${r.asked ? 'asked' : ''}">${r.text}</li>`)}</ul>
 
         <h3>${t('sum.hr')}</h3>
         ${hr.length ? html`<ul>${hr.map((f) => html`<li>${t(`hr.${f}`)}</li>`)}</ul>` : html`<p>${t('sum.hrNone')}</p>`}
@@ -1050,7 +1082,7 @@ async function loadAll() {
   state.profile = (await S.get('profile')) || null;
   state.stone = (await S.get('stone')) || {};
   state.settings = (await S.get('settings')) || {};
-  state.visit = { excluded: [], custom: [], highRisk: {}, ...((await S.get('visit')) || {}) };
+  state.visit = { excluded: [], custom: [], highRisk: {}, asked: [], ...((await S.get('visit')) || {}) };
   state.checkins = await S.allCheckins();
 }
 

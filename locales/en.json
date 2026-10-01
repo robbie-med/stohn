@@ -233,11 +233,17 @@
   "passed.note": "Passing one stone doesn't always mean every stone is gone. Ask whether you need imaging to confirm.",
   "passed.undo": "Mark as not passed",
   "visit.title": "Visit prep",
-  "visit.intro": "Take these to your follow-up with a urologist or primary care clinician. Questions are added based on what you entered. Untick any you don't need.",
+  "visit.intro": "Take these to your follow-up with a urologist or primary care clinician. Questions are suggested from what you entered. Tick each one off as you ask it, and remove any you don't need.",
   "visit.questions": "Questions to ask",
+  "visit.progress": "{n} of {total} asked",
   "visit.custom": "Add your own question",
   "visit.add": "Add",
   "visit.remove": "Remove",
+  "visit.removeOne": "Remove: {q}",
+  "visit.restore": {
+    "one": "Bring back 1 removed question",
+    "other": "Bring back {n} removed questions"
+  },
   "visit.emphasis": "Worth asking: you ticked a risk factor below.",
   "visit.hrTitle": "Am I at higher risk of more stones?",
   "visit.hrIntro": "European guidelines list conditions that make more stones more likely. Tick any that apply. This isn't a diagnosis — it's a list to discuss with your clinician.",

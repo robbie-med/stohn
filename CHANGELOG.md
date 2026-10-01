@@ -2,6 +2,11 @@
 
 Evidence and rule changes are listed with the date they were reviewed.
 
+## 1.3.2 — 2026-10-01
+- Visit questions: the box now means "asked". Every question starts unticked and is struck through
+  once ticked. Your own questions get the same box. Removing is a separate "Remove" action, and removed
+  suggestions can be brought back. The printable summary prints empty tick boxes, with asked ones ticked.
+
 ## 1.3.0 — 2026-10-01 (evidence 2026.10.01)
 - New "Pain" tab (and links from Today and after a check-in with pain). Non-drug measures come first:
   local heat (Kober 2003 RCT), acupuncture (Tu 2022, Cao 2025 sham-controlled RCTs; Chen 2023 meta-analysis),

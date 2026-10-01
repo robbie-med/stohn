@@ -1,6 +1,6 @@
 // First Stone service worker — offline-first, cache-first for our own files.
 // Bump CACHE on ANY asset change (tests/sw.test.js checks the list matches disk).
-const CACHE = 'firststone-v1.3.1';
+const CACHE = 'firststone-v1.3.2';
 const ASSETS = [
   './',
   './index.html',
