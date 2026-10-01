@@ -45,7 +45,8 @@ test('all dynamic keys the app builds exist in English', () => {
     ...ev.highRisk.factors.map((f) => `hr.${f}`),
     ...ev.sections.flatMap((s) => [`evs.${s.id}`, ...s.facts.map((f) => `evf.${f.key}`)]),
     ...ev.links.map((l) => `link.${l.id}`),
-    ...['today', 'checkin', 'stone', 'visit', 'more'].map((n) => `nav.${n}`),
+    ...['today', 'pain', 'checkin', 'stone', 'visit', 'more'].map((n) => `nav.${n}`),
+    ...['heat', 'acu', 'tens', 'fluid', 'nsaid', 'apap', 'opioid'].flatMap((k) => [`pain.${k}.title`, `pain.${k}.body`]),
   ];
   const qIds = new Set(['analysis', 'highRisk', 'urine24', 'imaging', 'metConsider', 'metDuration', 'options', 'stent', 'kidney', 'fluid', 'diet', 'pain', 'redFlags']);
   keys.push(...[...qIds].map((q) => `q.${q}`));

@@ -117,9 +117,96 @@
     "localprotocol": {
       "short": "Your discharge instructions",
       "cite": "Some emergency departments tell patients to be rechecked if symptoms persist beyond a set time (for example 48 hours). This is a local protocol, so the app only uses it if you enter it in Settings."
+    },
+    "holdgate2004": {
+      "short": "Holdgate 2004",
+      "cite": "Holdgate A, Pollock T. Systematic review of the relative efficacy of non-steroidal anti-inflammatory drugs and opioids in the treatment of acute renal colic. BMJ. 2004;328(7453):1401.",
+      "pmid": "15178585",
+      "doi": "10.1136/bmj.38119.581991.55"
+    },
+    "pathan2016": {
+      "short": "Pathan 2016",
+      "cite": "Pathan SA, Mitra B, Straney LD, et al. Delivering safe and effective analgesia for management of renal colic in the emergency department: a double-blind, multigroup, randomised controlled trial. Lancet. 2016;387(10032):1999-2007.",
+      "pmid": "26993881",
+      "doi": "10.1016/S0140-6736(16)00652-8"
+    },
+    "pathan2018": {
+      "short": "Pathan 2018",
+      "cite": "Pathan SA, Mitra B, Cameron PA. A systematic review and meta-analysis comparing the efficacy of nonsteroidal anti-inflammatory drugs, opioids, and paracetamol in the treatment of acute renal colic. Eur Urol. 2018;73(4):583-595.",
+      "pmid": "29174580",
+      "doi": "10.1016/j.eururo.2017.11.001"
+    },
+    "kober2003": {
+      "short": "Kober 2003",
+      "cite": "Kober A, Dobrovits M, Djavan B, et al. Local active warming: an effective treatment for pain, anxiety and nausea caused by renal colic. J Urol. 2003;170(3):741-744.",
+      "pmid": "12913687",
+      "doi": "10.1097/01.ju.0000080570.83834.ad"
+    },
+    "worster2012": {
+      "short": "Worster 2012 (Cochrane)",
+      "cite": "Worster AS, Bhanich Supapol W. Fluids and diuretics for acute ureteric colic. Cochrane Database Syst Rev. 2012;(2):CD004926.",
+      "pmid": "22336806",
+      "doi": "10.1002/14651858.CD004926.pub3"
+    },
+    "tu2022": {
+      "short": "Tu 2022",
+      "cite": "Tu JF, Cao Y, Wang LQ, et al. Effect of adjunctive acupuncture on pain relief among emergency department patients with acute renal colic due to urolithiasis: a randomized clinical trial. JAMA Netw Open. 2022;5(8):e2225735.",
+      "pmid": "35943743",
+      "doi": "10.1001/jamanetworkopen.2022.25735"
+    },
+    "cao2025": {
+      "short": "Cao 2025",
+      "cite": "Cao Y, Qu Z, Zhang S, et al. Early acupuncture intervention for pain relief in emergency department patients with suspected acute renal colic caused by urinary calculi: a randomized clinical trial. QJM. 2025;118(5):329-336.",
+      "pmid": "39945796",
+      "doi": "10.1093/qjmed/hcaf011"
+    },
+    "chen2023": {
+      "short": "Chen 2023",
+      "cite": "Chen HT, Kuo CF, Hsu CC, et al. Clinical efficacy of acupuncture for pain relief from renal colic: a meta-analysis and trial sequence analysis. Front Med (Lausanne). 2023;9:1100014.",
+      "pmid": "36698826",
+      "doi": "10.3389/fmed.2022.1100014"
+    },
+    "gulacti2022": {
+      "short": "Gulacti 2022",
+      "cite": "Gulacti U, Algin A, Turgut K, et al. Transcutaneous electrical nerve stimulation (TENS) for the treatment of renal colic in the ED: a randomized, double-blind, placebo-controlled trial. Am J Emerg Med. 2022;56:127-132.",
+      "pmid": "35397352",
+      "doi": "10.1016/j.ajem.2022.02.044"
+    },
+    "kser2023": {
+      "short": "KSER 2023 (Korea)",
+      "cite": "Jung HD, Lee JY, Kang DH, et al. Korean Society of Endourology and Robotics (KSER) recommendation on the diagnosis, treatment, and prevention of urolithiasis. Investig Clin Urol. 2023;64(4):325-337.",
+      "pmid": "37417557",
+      "doi": "10.4111/icu.20230102"
+    },
+    "zhang2025": {
+      "short": "UK Biobank 2025",
+      "cite": "Zhang J, Luo H, Wu H, et al. The association between domestic water hardness and kidney stone disease: a prospective cohort study from the UK Biobank. Int J Surg. 2025;111(2):1957-1967.",
+      "pmid": "39784501",
+      "doi": "10.1097/JS9.0000000000002198"
+    },
+    "qin2025": {
+      "short": "NHANES 2025",
+      "cite": "Qin J, Li J, Zhang H, et al. Association between drinking water type and kidney stone risk in U.S. adults: a cross-sectional analysis of NHANES 2009-2016 data. Int J Surg. 2025;111(12):8896-8904.",
+      "pmid": "40844897",
+      "doi": "10.1097/JS9.0000000000003248"
+    },
+    "mitra2018": {
+      "short": "Mitra 2018",
+      "cite": "Mitra P, Pal DK, Das M. Does quality of drinking water matter in kidney stone disease: a study in West Bengal, India. Investig Clin Urol. 2018;59(3):158-165.",
+      "pmid": "29744472",
+      "doi": "10.4111/icu.2018.59.3.158"
+    },
+    "bellizzi1999": {
+      "short": "Bellizzi 1999",
+      "cite": "Bellizzi V, De Nicola L, Minutolo R, et al. Effects of water hardness on urinary risk factors for kidney stones in patients with idiopathic nephrolithiasis. Nephron. 1999;81 Suppl 1:66-70.",
+      "pmid": "9873217",
+      "doi": "10.1159/000046301"
+    },
+    "medlabel": {
+      "short": "Medicine labels",
+      "cite": "Standard over-the-counter label warnings for NSAIDs and acetaminophen (kidney disease, stomach ulcers or bleeding, blood thinners, heart disease, pregnancy; duplicate ingredients)."
     }
   },
-
   "passage": {
     "minSizeMm": 0.5,
     "maxSizeMm": 30,
@@ -128,16 +215,44 @@
       "n": 172,
       "measure": "maximum diameter on axial CT",
       "bands": [
-        { "label": "1 mm", "lt": 1.5, "pct": 87 },
-        { "label": "2–4 mm", "gte": 1.5, "lt": 4.5, "pct": 76 },
-        { "label": "5–7 mm", "gte": 4.5, "lt": 7, "pct": 60 },
-        { "label": "7–9 mm", "gte": 7, "lte": 9, "pct": 48 },
-        { "label": "> 9 mm", "gt": 9, "pct": 25 }
+        {
+          "label": "1 mm",
+          "lt": 1.5,
+          "pct": 87
+        },
+        {
+          "label": "2–4 mm",
+          "gte": 1.5,
+          "lt": 4.5,
+          "pct": 76
+        },
+        {
+          "label": "5–7 mm",
+          "gte": 4.5,
+          "lt": 7,
+          "pct": 60
+        },
+        {
+          "label": "7–9 mm",
+          "gte": 7,
+          "lte": 9,
+          "pct": 48
+        },
+        {
+          "label": "> 9 mm",
+          "gt": 9,
+          "pct": 25
+        }
       ]
     },
     "collLocation": {
       "source": "coll2002",
-      "values": { "proximal": 48, "mid": 60, "distal": 75, "uvj": 79 }
+      "values": {
+        "proximal": 48,
+        "mid": 60,
+        "distal": 75,
+        "uvj": 79
+      }
     },
     "jendebergWidth": {
       "source": "jendeberg2017",
@@ -145,132 +260,587 @@
       "measure": "stone width on CT",
       "windowWeeks": 20,
       "bands": [
-        { "label": "0–2 mm", "lt": 2.5, "pct": 98 },
-        { "label": "3 mm", "gte": 2.5, "lt": 3.5, "pct": 98 },
-        { "label": "4 mm", "gte": 3.5, "lt": 4.5, "pct": 81 },
-        { "label": "5 mm", "gte": 4.5, "lt": 5.5, "pct": 65 },
-        { "label": "6 mm", "gte": 5.5, "lt": 6.5, "pct": 33 },
-        { "label": "≥ 6.5 mm", "gte": 6.5, "pct": 9 }
+        {
+          "label": "0–2 mm",
+          "lt": 2.5,
+          "pct": 98
+        },
+        {
+          "label": "3 mm",
+          "gte": 2.5,
+          "lt": 3.5,
+          "pct": 98
+        },
+        {
+          "label": "4 mm",
+          "gte": 3.5,
+          "lt": 4.5,
+          "pct": 81
+        },
+        {
+          "label": "5 mm",
+          "gte": 4.5,
+          "lt": 5.5,
+          "pct": 65
+        },
+        {
+          "label": "6 mm",
+          "gte": 5.5,
+          "lt": 6.5,
+          "pct": 33
+        },
+        {
+          "label": "≥ 6.5 mm",
+          "gte": 6.5,
+          "pct": 9
+        }
       ]
     },
     "millerTime": {
       "source": "miller1999",
       "n": 75,
       "bands": [
-        { "label": "≤ 2 mm", "lte": 2, "meanDays": 8.2, "p95Days": 31, "interventionPct": 4.8 },
-        { "label": "2–4 mm", "gt": 2, "lt": 4, "meanDays": 12.2, "p95Days": 40, "interventionPct": 17 },
-        { "label": "4–6 mm", "gte": 4, "lte": 6, "meanDays": 22.1, "p95Days": 39, "interventionPct": 50 }
+        {
+          "label": "≤ 2 mm",
+          "lte": 2,
+          "meanDays": 8.2,
+          "p95Days": 31,
+          "interventionPct": 4.8
+        },
+        {
+          "label": "2–4 mm",
+          "gt": 2,
+          "lt": 4,
+          "meanDays": 12.2,
+          "p95Days": 40,
+          "interventionPct": 17
+        },
+        {
+          "label": "4–6 mm",
+          "gte": 4,
+          "lte": 6,
+          "meanDays": 22.1,
+          "p95Days": 39,
+          "interventionPct": 50
+        }
       ]
     }
   },
-
   "met": {
     "maxSizeMm": 10,
     "windowDays": 30,
     "smallStoneMm": 5,
     "fasterDays": 3.8,
-    "sources": ["aua2026surg", "suspend2015", "stone2018", "hollingsworth2016"]
+    "sources": [
+      "aua2026surg",
+      "suspend2015",
+      "stone2018",
+      "hollingsworth2016"
+    ]
   },
-
   "outlook": {
     "comment": "Plain-language headline buckets. The mean of the two CT cohorts' size-based passage figures is mapped to a bucket (location is described separately); the cited figures themselves are shown under 'Where these numbers come from'.",
     "likelyMinPct": 70,
     "unlikelyBelowPct": 40
   },
-
   "optionsQuestionMinMm": 5,
-
   "highRisk": {
     "source": "eau",
-    "factors": ["youngOnset", "familyHistory", "stoneType", "solitary", "hyperpara", "metabolic", "bowel", "sarcoid", "genetic", "anatomy"]
+    "factors": [
+      "youngOnset",
+      "familyHistory",
+      "stoneType",
+      "solitary",
+      "hyperpara",
+      "metabolic",
+      "bowel",
+      "sarcoid",
+      "genetic",
+      "anatomy"
+    ]
   },
-
   "sections": [
     {
       "id": "passage",
       "facts": [
-        { "key": "collSize", "sources": ["coll2002"], "vars": {
-          "s1": "$passage.collSize.bands.0.pct", "s2": "$passage.collSize.bands.1.pct", "s3": "$passage.collSize.bands.2.pct",
-          "s4": "$passage.collSize.bands.3.pct", "s5": "$passage.collSize.bands.4.pct" } },
-        { "key": "collLoc", "sources": ["coll2002"], "vars": {
-          "p": "$passage.collLocation.values.proximal", "m": "$passage.collLocation.values.mid",
-          "d": "$passage.collLocation.values.distal", "u": "$passage.collLocation.values.uvj" } },
-        { "key": "jend", "sources": ["jendeberg2017"], "vars": {
-          "a": "$passage.jendebergWidth.bands.1.pct", "b": "$passage.jendebergWidth.bands.2.pct", "c": "$passage.jendebergWidth.bands.3.pct",
-          "d": "$passage.jendebergWidth.bands.4.pct", "e": "$passage.jendebergWidth.bands.5.pct" } }
+        {
+          "key": "collSize",
+          "sources": [
+            "coll2002"
+          ],
+          "vars": {
+            "s1": "$passage.collSize.bands.0.pct",
+            "s2": "$passage.collSize.bands.1.pct",
+            "s3": "$passage.collSize.bands.2.pct",
+            "s4": "$passage.collSize.bands.3.pct",
+            "s5": "$passage.collSize.bands.4.pct"
+          }
+        },
+        {
+          "key": "collLoc",
+          "sources": [
+            "coll2002"
+          ],
+          "vars": {
+            "p": "$passage.collLocation.values.proximal",
+            "m": "$passage.collLocation.values.mid",
+            "d": "$passage.collLocation.values.distal",
+            "u": "$passage.collLocation.values.uvj"
+          }
+        },
+        {
+          "key": "jend",
+          "sources": [
+            "jendeberg2017"
+          ],
+          "vars": {
+            "a": "$passage.jendebergWidth.bands.1.pct",
+            "b": "$passage.jendebergWidth.bands.2.pct",
+            "c": "$passage.jendebergWidth.bands.3.pct",
+            "d": "$passage.jendebergWidth.bands.4.pct",
+            "e": "$passage.jendebergWidth.bands.5.pct"
+          }
+        }
       ]
     },
     {
       "id": "time",
       "facts": [
-        { "key": "miller", "sources": ["miller1999"], "vars": {
-          "m1": "$passage.millerTime.bands.0.meanDays", "m2": "$passage.millerTime.bands.1.meanDays", "m3": "$passage.millerTime.bands.2.meanDays",
-          "p1": "$passage.millerTime.bands.0.p95Days", "p2": "$passage.millerTime.bands.1.p95Days", "p3": "$passage.millerTime.bands.2.p95Days" } },
-        { "key": "millerInt", "sources": ["miller1999"], "vars": { "pct": "$passage.millerTime.bands.2.interventionPct" } }
+        {
+          "key": "miller",
+          "sources": [
+            "miller1999"
+          ],
+          "vars": {
+            "m1": "$passage.millerTime.bands.0.meanDays",
+            "m2": "$passage.millerTime.bands.1.meanDays",
+            "m3": "$passage.millerTime.bands.2.meanDays",
+            "p1": "$passage.millerTime.bands.0.p95Days",
+            "p2": "$passage.millerTime.bands.1.p95Days",
+            "p3": "$passage.millerTime.bands.2.p95Days"
+          }
+        },
+        {
+          "key": "millerInt",
+          "sources": [
+            "miller1999"
+          ],
+          "vars": {
+            "pct": "$passage.millerTime.bands.2.interventionPct"
+          }
+        }
       ]
     },
     {
       "id": "met",
       "facts": [
-        { "key": "metAua", "sources": ["aua2026surg"], "vars": { "mm": "$met.maxSizeMm", "days": "$met.windowDays" } },
-        { "key": "suspend", "sources": ["suspend2015"], "vars": { "pct": 80 } },
-        { "key": "stoneTrial", "sources": ["stone2018"], "vars": { "mm": 3.8, "t": 50, "p": 47 } },
-        { "key": "meta", "sources": ["hollingsworth2016"], "vars": { "rr": 1.49 } },
-        { "key": "metaTime", "sources": ["hollingsworth2016"], "vars": { "days": "$met.fasterDays", "mm": "$met.smallStoneMm" } }
+        {
+          "key": "metAua",
+          "sources": [
+            "aua2026surg"
+          ],
+          "vars": {
+            "mm": "$met.maxSizeMm",
+            "days": "$met.windowDays"
+          }
+        },
+        {
+          "key": "suspend",
+          "sources": [
+            "suspend2015"
+          ],
+          "vars": {
+            "pct": 80
+          }
+        },
+        {
+          "key": "stoneTrial",
+          "sources": [
+            "stone2018"
+          ],
+          "vars": {
+            "mm": 3.8,
+            "t": 50,
+            "p": 47
+          }
+        },
+        {
+          "key": "meta",
+          "sources": [
+            "hollingsworth2016"
+          ],
+          "vars": {
+            "rr": 1.49
+          }
+        },
+        {
+          "key": "metaTime",
+          "sources": [
+            "hollingsworth2016"
+          ],
+          "vars": {
+            "days": "$met.fasterDays",
+            "mm": "$met.smallStoneMm"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pain",
+      "facts": [
+        {
+          "key": "heat",
+          "sources": [
+            "kober2003"
+          ],
+          "vars": {
+            "n": "$pain.heat.n",
+            "before": "$pain.heat.before",
+            "after": "$pain.heat.after"
+          }
+        },
+        {
+          "key": "acu",
+          "sources": [
+            "tu2022",
+            "cao2025",
+            "chen2023"
+          ],
+          "vars": {
+            "a": "$pain.acu.tu.0",
+            "b": "$pain.acu.tu.1",
+            "c": "$pain.acu.cao.0",
+            "d": "$pain.acu.cao.1",
+            "n": "$pain.acu.metaTrials"
+          }
+        },
+        {
+          "key": "tens",
+          "sources": [
+            "gulacti2022"
+          ],
+          "vars": {
+            "n": "$pain.tens.n",
+            "a": "$pain.tens.real",
+            "b": "$pain.tens.sham"
+          }
+        },
+        {
+          "key": "colicFluids",
+          "sources": [
+            "worster2012"
+          ],
+          "vars": {}
+        },
+        {
+          "key": "nsaidVsOpioid",
+          "sources": [
+            "holdgate2004",
+            "pathan2018"
+          ],
+          "vars": {}
+        },
+        {
+          "key": "edTrial",
+          "sources": [
+            "pathan2016"
+          ],
+          "vars": {
+            "a": "$pain.ed.nsaid",
+            "b": "$pain.ed.apap",
+            "c": "$pain.ed.morphine"
+          }
+        },
+        {
+          "key": "kserLadder",
+          "sources": [
+            "kser2023"
+          ],
+          "vars": {}
+        }
       ]
     },
     {
       "id": "redflags",
       "facts": [
-        { "key": "infection", "sources": ["aua2026surg", "eau"], "vars": {} },
-        { "key": "returnSigns", "sources": ["patientinfo"], "vars": {} },
-        { "key": "revisit", "sources": ["scales2015"], "vars": { "pct": 11 } }
+        {
+          "key": "infection",
+          "sources": [
+            "aua2026surg",
+            "eau"
+          ],
+          "vars": {}
+        },
+        {
+          "key": "returnSigns",
+          "sources": [
+            "patientinfo"
+          ],
+          "vars": {}
+        },
+        {
+          "key": "revisit",
+          "sources": [
+            "scales2015"
+          ],
+          "vars": {
+            "pct": 11
+          }
+        }
       ]
     },
     {
       "id": "recurrence",
       "facts": [
-        { "key": "roks", "sources": ["rule2014"], "vars": { "y2": 11, "y5": 20, "y10": 31, "y15": 39, "lo": 12, "hi": 56 } },
-        { "key": "roksValid", "sources": ["iremashvili2019"], "vars": { "auc2": 0.655, "auc5": 0.605 } }
+        {
+          "key": "roks",
+          "sources": [
+            "rule2014"
+          ],
+          "vars": {
+            "y2": 11,
+            "y5": 20,
+            "y10": 31,
+            "y15": 39,
+            "lo": 12,
+            "hi": 56
+          }
+        },
+        {
+          "key": "roksValid",
+          "sources": [
+            "iremashvili2019"
+          ],
+          "vars": {
+            "auc2": 0.655,
+            "auc5": 0.605
+          }
+        }
       ]
     },
     {
       "id": "fluid",
       "facts": [
-        { "key": "fluidTarget", "sources": ["aua2014", "aua2026med", "eau"], "vars": { "l": 2.5 } },
-        { "key": "borghiFluid", "sources": ["borghi1996"], "vars": { "a": 12, "b": 27 } },
-        { "key": "push", "sources": ["push2026"], "vars": { "a": 19, "b": 20 } }
+        {
+          "key": "fluidTarget",
+          "sources": [
+            "aua2014",
+            "aua2026med",
+            "eau",
+            "kser2023"
+          ],
+          "vars": {
+            "l": 2.5
+          }
+        },
+        {
+          "key": "borghiFluid",
+          "sources": [
+            "borghi1996"
+          ],
+          "vars": {
+            "a": 12,
+            "b": 27
+          }
+        },
+        {
+          "key": "push",
+          "sources": [
+            "push2026"
+          ],
+          "vars": {
+            "a": 19,
+            "b": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "facts": [
+        {
+          "key": "ukb",
+          "sources": [
+            "zhang2025"
+          ],
+          "vars": {
+            "n": "$water.ukbN"
+          }
+        },
+        {
+          "key": "nhanes",
+          "sources": [
+            "qin2025"
+          ],
+          "vars": {
+            "n": "$water.nhanesN",
+            "pct": "$water.nhanesLowerPct"
+          }
+        },
+        {
+          "key": "quantity",
+          "sources": [
+            "mitra2018"
+          ],
+          "vars": {}
+        },
+        {
+          "key": "hardBottled",
+          "sources": [
+            "bellizzi1999"
+          ],
+          "vars": {
+            "pct": "$water.hardBottledUrineCaPct"
+          }
+        },
+        {
+          "key": "kserFluid",
+          "sources": [
+            "kser2023"
+          ],
+          "vars": {}
+        }
       ]
     },
     {
       "id": "diet",
       "facts": [
-        { "key": "borghiDiet", "sources": ["borghi2002"], "vars": { "a": 12, "b": 23 } },
-        { "key": "auaDiet", "sources": ["aua2014"], "vars": {} }
+        {
+          "key": "borghiDiet",
+          "sources": [
+            "borghi2002"
+          ],
+          "vars": {
+            "a": 12,
+            "b": 23
+          }
+        },
+        {
+          "key": "auaDiet",
+          "sources": [
+            "aua2014"
+          ],
+          "vars": {}
+        }
       ]
     },
     {
       "id": "testing",
       "facts": [
-        { "key": "analysis", "sources": ["eau"], "vars": {} },
-        { "key": "urine24", "sources": ["aua2014", "aua2026med"], "vars": {} }
+        {
+          "key": "analysis",
+          "sources": [
+            "eau",
+            "kser2023"
+          ],
+          "vars": {}
+        },
+        {
+          "key": "urine24",
+          "sources": [
+            "aua2014",
+            "aua2026med"
+          ],
+          "vars": {}
+        }
       ]
     },
     {
       "id": "context",
       "facts": [
-        { "key": "edInstr", "sources": ["moussa2019"], "vars": { "a": 68, "b": 82 } },
-        { "key": "apps", "sources": ["philipmckenzie2020"], "vars": { "n": 51 } }
+        {
+          "key": "edInstr",
+          "sources": [
+            "moussa2019"
+          ],
+          "vars": {
+            "a": 68,
+            "b": 82
+          }
+        },
+        {
+          "key": "apps",
+          "sources": [
+            "philipmckenzie2020"
+          ],
+          "vars": {
+            "n": 51
+          }
+        }
       ]
     }
   ],
-
   "links": [
-    { "id": "ucfStones", "url": "https://www.urologyhealth.org/urology-a-z/k/kidney-stones", "lang": "en" },
-    { "id": "ucfFind", "url": "https://www.urologyhealth.org/find-a-urologist", "lang": "en" },
-    { "id": "auaGuidelines", "url": "https://www.auanet.org/guidelines-and-quality/guidelines", "lang": "en" },
-    { "id": "eauGuidelines", "url": "https://uroweb.org/guidelines/urolithiasis", "lang": "en" },
-    { "id": "kua", "url": "https://www.urology.or.kr", "lang": "ko" },
-    { "id": "kdca", "url": "https://health.kdca.go.kr", "lang": "ko" }
-  ]
+    {
+      "id": "ucfStones",
+      "url": "https://www.urologyhealth.org/urology-a-z/k/kidney-stones",
+      "lang": "en"
+    },
+    {
+      "id": "ucfFind",
+      "url": "https://www.urologyhealth.org/find-a-urologist",
+      "lang": "en"
+    },
+    {
+      "id": "auaGuidelines",
+      "url": "https://www.auanet.org/guidelines-and-quality/guidelines",
+      "lang": "en"
+    },
+    {
+      "id": "eauGuidelines",
+      "url": "https://uroweb.org/guidelines/urolithiasis",
+      "lang": "en"
+    },
+    {
+      "id": "kser",
+      "url": "https://doi.org/10.4111/icu.20230102",
+      "lang": "en"
+    },
+    {
+      "id": "kua",
+      "url": "https://www.urology.or.kr",
+      "lang": "ko"
+    },
+    {
+      "id": "kdca",
+      "url": "https://health.kdca.go.kr",
+      "lang": "ko"
+    }
+  ],
+  "pain": {
+    "heat": {
+      "n": 100,
+      "before": 82,
+      "after": 36,
+      "tempC": 42
+    },
+    "acu": {
+      "tu": [
+        77.5,
+        10
+      ],
+      "cao": [
+        64.3,
+        16.7
+      ],
+      "metaTrials": 13,
+      "metaN": 1212
+    },
+    "tens": {
+      "n": 100,
+      "real": 8,
+      "sham": 48
+    },
+    "ed": {
+      "nsaid": 68,
+      "apap": 66,
+      "morphine": 61
+    }
+  },
+  "water": {
+    "ukbN": 288041,
+    "nhanesN": 10246,
+    "nhanesLowerPct": 32,
+    "hardBottledUrineCaPct": 50
+  }
 }

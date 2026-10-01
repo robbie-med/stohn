@@ -6,7 +6,7 @@ import * as I from './i18n.js';
 import * as S from './store.js';
 import * as B from './backup.js';
 
-export const APP_VERSION = '1.2.0';
+export const APP_VERSION = '1.3.0';
 const REPO_URL = 'https://github.com/robbie-med/stohn';
 
 const state = {
@@ -334,6 +334,8 @@ views.today = () => {
         ${!passed && (ex.met === 'strong' || ex.met === 'conditional') ? html`<p class="small muted">${t('today.window', { days: ev.met.windowDays })}</p>` : ''}
       </section>
 
+      <p><a class="btn" href="#/pain">${t('today.painLink')}</a></p>
+
       ${courseFired.length ? html`<section><h2>${t('today.alerts')}</h2>${firedCard(courseFired)}</section>` : ''}
 
       <section class="sec">
@@ -386,6 +388,7 @@ views.checkin = (dateParam) => {
       <h1 tabindex="-1">${t('checkin.title')}</h1>
       ${result
         ? html`<div aria-live="polite">${result.fired.length ? firedCard(result.fired) : html`<div class="alert level-none"><p>${t('checkin.resultNone')}</p></div>`}
+            ${result.pain > 0 ? html`<p><a class="btn" href="#/pain">${t('checkin.painLink')}</a></p>` : ''}
             ${result.stoneSeen && !state.stone.passedDate ? html`<p><a class="btn" href="#/passed">${t('checkin.stoneSeenNext')}</a></p>` : ''}</div>`
         : html`<p class="muted">${t('checkin.intro')}</p>`}
       <form id="checkin-form">
@@ -425,7 +428,7 @@ views.checkin = (dateParam) => {
         await S.putCheckin(rec);
         state.checkins = await S.allCheckins();
         const fired = E.evaluate(state.rules, 'checkin', E.checkinContext(rec));
-        state.lastCheckinResult = { date: rec.date, fired, stoneSeen: rec.stoneSeen };
+        state.lastCheckinResult = { date: rec.date, fired, stoneSeen: rec.stoneSeen, pain: rec.pain };
         render();
         if (fired.length) showEscalation(fired);
       });
@@ -603,6 +606,7 @@ views.visit = () => {
           <li>${t('know.calcium')} ${sourceChips(['borghi2002'])}</li>
           <li>${t('know.oxalate')} ${sourceChips(['aua2014'])}</li>
           <li>${t('know.tracking')} ${sourceChips(['push2026'])}</li>
+          <li>${t('know.water')} ${sourceChips(['zhang2025', 'qin2025', 'bellizzi1999'])}</li>
         </ul>
       </section>
       <a class="btn btn-primary btn-block" href="#/summary">${t('visit.summaryBtn')}</a>`,
@@ -747,6 +751,49 @@ views.evidence = () => {
             ${s.url ? html` · <a href="${s.url}" target="_blank" rel="noopener noreferrer">${new URL(s.url).hostname}</a>` : ''}
             ${s.secondary ? html` <small class="muted">(${t('ev.secondary')})</small>` : ''}</li>`;
         })}</ol>
+      </section>`,
+  };
+};
+
+views.pain = () => {
+  const { t, ev } = state;
+  const P = ev.pain;
+  const num = emergencyNumber();
+  const item = (key, vars, sources, extraKey) => html`
+    <div class="para">
+      <h3>${t(`pain.${key}.title`)}</h3>
+      <p>${t(`pain.${key}.body`, vars)} ${sourceChips(sources)}</p>
+      ${extraKey ? html`<p class="muted">${t(`pain.${key}.${extraKey}`, vars)}</p>` : ''}
+    </div>`;
+  return {
+    html: html`
+      <h1 tabindex="-1">${t('pain.title')}</h1>
+      <p>${t('pain.intro')}</p>
+      <div class="alert level-er">
+        <p>${t('pain.erLine')}</p>
+        <a class="banner-call" href="${telHref(num)}">${t('banner.call', { number: num })}</a>
+      </div>
+
+      <section class="sec">
+        <h2>${t('pain.noDrugTitle')}</h2>
+        ${item('heat', { n: P.heat.n, before: P.heat.before, after: P.heat.after, temp: P.heat.tempC }, ['kober2003'], 'safety')}
+        ${item('acu', { a: t.num(P.acu.tu[0]), b: t.num(P.acu.tu[1]), c: t.num(P.acu.cao[0]), d: t.num(P.acu.cao[1]), n: P.acu.metaTrials }, ['tu2022', 'cao2025', 'chen2023'], 'note')}
+        ${item('tens', { n: P.tens.n, a: P.tens.real, b: P.tens.sham }, ['gulacti2022'], 'note')}
+        ${item('fluid', {}, ['worster2012'])}
+        <div class="para">
+          <h3>${t('pain.cope.title')}</h3>
+          <p>${t('pain.cope.body')}</p>
+          <ul class="dolist"><li>${t('pain.cope.1')}</li><li>${t('pain.cope.2')}</li><li>${t('pain.cope.3')}</li><li>${t('pain.cope.4')}</li></ul>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2>${t('pain.drugTitle')}</h2>
+        <p class="note">${t('pain.drugIntro')}</p>
+        ${item('nsaid', {}, ['holdgate2004', 'pathan2018', 'kser2023', 'eau'], 'caution')}
+        ${item('apap', { a: P.ed.nsaid, b: P.ed.apap }, ['pathan2016', 'kser2023', 'medlabel'])}
+        ${item('opioid', { c: P.ed.morphine }, ['holdgate2004', 'pathan2016'])}
+        <p class="note">${t('pain.ladder')} ${sourceChips(['kser2023'])}</p>
       </section>`,
   };
 };

@@ -2,6 +2,20 @@
 
 Evidence and rule changes are listed with the date they were reviewed.
 
+## 1.3.0 — 2026-10-01 (evidence 2026.10.01)
+- New "Pain" tab (and links from Today and after a check-in with pain). Non-drug measures come first:
+  local heat (Kober 2003 RCT), acupuncture (Tu 2022, Cao 2025 sham-controlled RCTs; Chen 2023 meta-analysis),
+  TENS (Gulacti 2022 RCT), no forced fluids during an attack (Worster 2012 Cochrane), and coping steps
+  explicitly labelled as untested but safe. Then medicines in the Korean guideline order (KSER 2023):
+  NSAIDs → acetaminophen → opioids, with NSAID cautions and no doses (Holdgate 2004, Pathan 2016/2018).
+  Going to the ER when prescribed medicine doesn't control the pain stays at the top.
+- Tap water: added to "Good to know" and the evidence page. Hardness isn't linked to stones overall
+  (UK Biobank, 288,041 people), more tap water is linked to fewer stones (NHANES), quantity matters
+  more than quality (Mitra 2018); very hard bottled water raises urine calcium (Bellizzi 1999).
+- Korean guideline KSER 2023 added as a source (fluids 2.5–3 L, salt 4–5 g, stone analysis for all).
+  No Chinese national stone guideline is indexed in PubMed in English. The Urological Association of Asia's 2019
+  guideline (Taguchi, Int J Urol) exists but its full text couldn't be read, so it isn't cited.
+
 ## 1.2.0 — 2026-10-01 (evidence 2026.10.01)
 - "My stone" now leads with a plain answer: whether most stones that size pass, about how many
   weeks it usually takes and the longest it typically takes, whether tamsulosin makes a difference at that size, and what to do now.
