@@ -74,8 +74,27 @@ export function explain(stone, ev) {
     out.timing = m ? { ...m, source: p.millerTime.source } : { outOfRange: true, source: p.millerTime.source };
   }
   out.met = metCategory(size, loc, ev.met.maxSizeMm);
+  out.outlook = outlook(out, ev);
+  out.metEffect =
+    out.met === 'strong' || out.met === 'conditional' ? (size < ev.met.smallStoneMm ? 'small' : 'larger') : null;
   return out;
 }
+
+// Plain-language bucket for the headline: 'likely' | 'mixed' | 'unlikely',
+// or null when the ureteral cohorts don't apply (stone in the kidney).
+export function outlook(ex, ev) {
+  if (!ex.ureteralCohortApplies) return null;
+  // Size only: location gets its own plain sentence in the UI rather than
+  // being averaged in (averaging made a 9 mm low stone look "mixed").
+  const pcts = ex.sizeEstimates.map((e) => e.pct);
+  const mean = pcts.reduce((a, b) => a + b, 0) / pcts.length;
+  if (mean >= ev.outlook.likelyMinPct) return 'likely';
+  if (mean < ev.outlook.unlikelyBelowPct) return 'unlikely';
+  return 'mixed';
+}
+
+// Days -> whole weeks for plain wording (never less than 1).
+export const toWeeks = (days) => Math.max(1, Math.round(days / 7));
 
 // ---------- rules ----------
 

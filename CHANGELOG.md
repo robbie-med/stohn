@@ -2,6 +2,18 @@
 
 Evidence and rule changes are listed with the date they were reviewed.
 
+## 1.2.0 — 2026-10-01 (evidence 2026.10.01)
+- "My stone" now leads with a plain answer: whether most stones that size pass, about how many
+  weeks it usually takes and the longest it typically takes, whether tamsulosin makes a difference at that size, and what to do now.
+  The cohort figures, sources and caveats moved into a collapsible "Where these numbers come from".
+- Headline buckets come from the mean of the two CT cohorts' size figures (≥ 70 % "most pass",
+  < 40 % "often need a procedure", otherwise "some pass"). Location gets its own sentence rather
+  than being averaged in.
+- Added Hollingsworth 2016 time-to-passage result: alpha-blockers shortened passage by 3.8 days on
+  average, with no clear benefit for stones of about 5 mm or less (consistent with STONE 2018, mean stone 3.8 mm,
+  where neither passage rate nor time to passage differed).
+- Timing figures (Miller & Kane 1999) are now labelled as coming from people not taking tamsulosin.
+
 ## 1.1.0 — 2026-09-28
 - Redesign: editorial layout without cards, bundled Fraunces + Gowun Batang, view transitions,
   bottom-sheet safety dialogs.

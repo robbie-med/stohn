@@ -155,3 +155,34 @@ test('resolveVars reads numbers from evidence.json', () => {
 test('°F entries round-trip at 0.1 °F', () => {
   for (let f = 95; f <= 106; f = Math.round((f + 0.1) * 10) / 10) assert.equal(E.cToF(E.fToC(f)), f);
 });
+
+test('plain outlook buckets by size; location never flips the bucket', () => {
+  const o = (s, l = 'distal') => E.explain({ sizeMm: s, location: l }, ev).outlook;
+  assert.equal(o(2), 'likely');
+  assert.equal(o(3), 'likely');
+  assert.equal(o(4), 'likely');
+  assert.equal(o(5), 'mixed');
+  assert.equal(o(6), 'mixed');
+  assert.equal(o(7), 'unlikely');
+  assert.equal(o(9), 'unlikely');
+  assert.equal(o(9, 'uvj'), 'unlikely');
+  assert.equal(o(3, 'proximal'), 'likely');
+  assert.equal(o(4, 'kidney'), null);
+});
+
+test('medicine effect wording follows stone size and location', () => {
+  const m = (s, l) => E.explain({ sizeMm: s, location: l }, ev).metEffect;
+  assert.equal(m(3, 'distal'), 'small');
+  assert.equal(m(6, 'distal'), 'larger');
+  assert.equal(m(6, 'mid'), 'larger');
+  assert.equal(m(12, 'distal'), null); // over the guideline's 10 mm
+  assert.equal(m(4, 'kidney'), null);
+  assert.equal(m(4, 'unknown'), null);
+});
+
+test('plain timing for a 3 mm stone: about 2 weeks, up to about 6', () => {
+  const tm = E.explain({ sizeMm: 3, location: 'distal' }, ev).timing;
+  assert.equal(E.toWeeks(tm.meanDays), 2);
+  assert.equal(E.toWeeks(tm.p95Days), 6);
+  assert.equal(E.toWeeks(2), 1);
+});

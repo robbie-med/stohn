@@ -1,6 +1,6 @@
 {
-  "version": "2026.09.28",
-  "reviewed": "2026-09-28",
+  "version": "2026.10.01",
+  "reviewed": "2026-10-01",
   "reviewer": null,
   "sources": {
     "coll2002": {
@@ -167,7 +167,15 @@
   "met": {
     "maxSizeMm": 10,
     "windowDays": 30,
+    "smallStoneMm": 5,
+    "fasterDays": 3.8,
     "sources": ["aua2026surg", "suspend2015", "stone2018", "hollingsworth2016"]
+  },
+
+  "outlook": {
+    "comment": "Plain-language headline buckets. The mean of the two CT cohorts' size-based passage figures is mapped to a bucket (location is described separately); the cited figures themselves are shown under 'Where these numbers come from'.",
+    "likelyMinPct": 70,
+    "unlikelyBelowPct": 40
   },
 
   "optionsQuestionMinMm": 5,
@@ -207,7 +215,8 @@
         { "key": "metAua", "sources": ["aua2026surg"], "vars": { "mm": "$met.maxSizeMm", "days": "$met.windowDays" } },
         { "key": "suspend", "sources": ["suspend2015"], "vars": { "pct": 80 } },
         { "key": "stoneTrial", "sources": ["stone2018"], "vars": { "mm": 3.8, "t": 50, "p": 47 } },
-        { "key": "meta", "sources": ["hollingsworth2016"], "vars": { "rr": 1.49 } }
+        { "key": "meta", "sources": ["hollingsworth2016"], "vars": { "rr": 1.49 } },
+        { "key": "metaTime", "sources": ["hollingsworth2016"], "vars": { "days": "$met.fasterDays", "mm": "$met.smallStoneMm" } }
       ]
     },
     {

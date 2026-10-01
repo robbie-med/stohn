@@ -6,7 +6,7 @@ import * as I from './i18n.js';
 import * as S from './store.js';
 import * as B from './backup.js';
 
-export const APP_VERSION = '1.1.0';
+export const APP_VERSION = '1.2.0';
 const REPO_URL = 'https://github.com/robbie-med/stohn';
 
 const state = {
@@ -148,6 +148,36 @@ function showEscalation(fired, { onClose } = {}) {
 
 // ---------- shared fragments ----------
 
+// Plain answer first (will it pass, how long, does medicine matter, what to do),
+// with the cited cohort figures folded under "Where these numbers come from".
+function plainAnswer(ex, stone) {
+  const { t, ev } = state;
+  const weeks = (d) => t('ex.weeks', { n: E.toWeeks(d) });
+  const lines = [];
+  if (ex.outlook) lines.push(html`<p class="lead">${t(`ex.pass.${ex.outlook}`)}</p>`);
+  else lines.push(html`<p class="lead">${t('ex.pass.kidney')}</p>`);
+  if (ex.loc === 'distal' || ex.loc === 'uvj') lines.push(html`<p>${t('ex.where.low')}</p>`);
+  else if (ex.loc === 'proximal' || ex.loc === 'mid') lines.push(html`<p>${t('ex.where.high')}</p>`);
+  if (ex.timing) {
+    lines.push(
+      html`<p class="lead">${ex.timing.outOfRange
+        ? t('ex.time.big')
+        : t('ex.time.typical', { typ: weeks(ex.timing.meanDays), max: weeks(ex.timing.p95Days) })}</p>`,
+    );
+  }
+  if (ex.metEffect) lines.push(html`<p>${t(`ex.metEffect.${ex.metEffect}`, { days: Math.round(ev.met.fasterDays) })} ${t('ex.metDecision')}</p>`);
+  return html`
+    <h2>${t('ex.answerTitle')}</h2>
+    ${lines}
+    <p class="note">${t('ex.population')}</p>
+    <h3>${t('ex.doTitle')}</h3>
+    <ul class="dolist">
+      <li>${t('ex.do.strain')}</li>
+      <li>${t('ex.do.checkin')}</li>
+      <li>${t('ex.do.fourWeeks')}</li>
+    </ul>`;
+}
+
 function explainerHtml(stone) {
   const { t, ev } = state;
   const ex = E.explain(stone, ev);
@@ -155,51 +185,49 @@ function explainerHtml(stone) {
   const p = ev.passage;
   const parts = [];
 
-  parts.push(html`<h2>${t('ex.title')}</h2><p class="note">${t('ex.population')}</p>`);
-
   if (ex.ureteralCohortApplies) {
     const { low, high } = ex.sizeRange;
     const [coll, jend] = ex.sizeEstimates;
     parts.push(html`
-      <div class="stat">
-        <p class="big">${low === high ? `${low}%` : `${low}–${high}%`}</p>
-        <p>${low === high ? t('ex.sizeSingle', { pct: low }) : t('ex.sizeRange', { low, high })}</p>
-        <ul class="plain">
-          <li>${t('ex.collRow', { band: coll.band, pct: coll.pct, n: p.collSize.n })} ${sourceChips([coll.source])}</li>
-          <li>${t('ex.jendRow', { band: jend.band, pct: jend.pct, n: p.jendebergWidth.n, weeks: p.jendebergWidth.windowWeeks })} ${sourceChips([jend.source])}</li>
-        </ul>
-      </div>`);
+      <p>${low === high ? t('ex.sizeSingle', { pct: low }) : t('ex.sizeRange', { low, high })}</p>
+      <ul class="plain">
+        <li>${t('ex.collRow', { band: coll.band, pct: coll.pct, n: p.collSize.n })} ${sourceChips([coll.source])}</li>
+        <li>${t('ex.jendRow', { band: jend.band, pct: jend.pct, n: p.jendebergWidth.n, weeks: p.jendebergWidth.windowWeeks })} ${sourceChips([jend.source])}</li>
+      </ul>`);
     if (ex.locationEstimate) {
-      parts.push(html`<div class="para"><p>${t('ex.locationRow', { pct: ex.locationEstimate.pct })} ${sourceChips([ex.locationEstimate.source])}</p></div>`);
+      parts.push(html`<p>${t('ex.locationRow', { pct: ex.locationEstimate.pct })} ${sourceChips([ex.locationEstimate.source])}</p>`);
     } else {
       const v = p.collLocation.values;
-      parts.push(html`<div class="para"><p>${t('ex.unknownLoc', { p: v.proximal, u: v.uvj })} ${sourceChips([p.collLocation.source])}</p></div>`);
+      parts.push(html`<p>${t('ex.unknownLoc', { p: v.proximal, u: v.uvj })} ${sourceChips([p.collLocation.source])}</p>`);
     }
     const tm = ex.timing;
-    parts.push(html`<h3>${t('ex.timingTitle')}</h3><div class="para"><p>${
+    parts.push(html`<h3>${t('ex.timingTitle')}</h3><p>${
       tm.outOfRange
         ? t('ex.timingOut')
         : t('ex.timing', { n: p.millerTime.n, band: tm.label, mean: t.num(tm.meanDays), p95: tm.p95Days, intervention: t.num(tm.interventionPct) })
-    } ${sourceChips([tm.source])}</p></div>`);
+    } ${t('ex.timingNoMet')} ${sourceChips([tm.source])}</p>`);
   } else {
-    parts.push(html`<div class="para"><p>${t('ex.kidney')}</p></div>`);
+    parts.push(html`<p>${t('ex.kidney')}</p>`);
   }
 
   parts.push(html`
     <h3>${t('ex.metTitle')}</h3>
-    <div class="para">
-      <p>${t(`ex.met.${ex.met}`, { mm: ev.met.maxSizeMm, days: ev.met.windowDays })}</p>
-      ${ex.met === 'strong' || ex.met === 'conditional' ? html`<p>${t('ex.metTrials')}</p>` : ''}
-      ${stone.onMet === 'yes' ? html`<p>${t('ex.metYou')}</p>` : ''}
-      <p><strong>${t('ex.metDecision')}</strong></p>
-      <p>${sourceChips(ev.met.sources)}</p>
-    </div>
-    <div class="para"><p>${t('ex.confirm')} ${sourceChips(['aua2026surg'])}</p></div>
+    <p>${t(`ex.met.${ex.met}`, { mm: ev.met.maxSizeMm, days: ev.met.windowDays })}</p>
+    ${ex.met === 'strong' || ex.met === 'conditional' ? html`<p>${t('ex.metTrials')}</p>` : ''}
+    ${stone.onMet === 'yes' ? html`<p>${t('ex.metYou')}</p>` : ''}
+    <p>${sourceChips(ev.met.sources)}</p>
+    <p>${t('ex.confirm')} ${sourceChips(['aua2026surg'])}</p>
     <h3>${t('ex.limitsTitle')}</h3>
     <ul class="limits">
-      <li>${t('ex.limit1')}</li><li>${t('ex.limit2')}</li><li>${t('ex.limit3')}</li><li>${t('ex.limit4')}</li>
+      <li>${t('ex.limit0')}</li><li>${t('ex.limit1')}</li><li>${t('ex.limit2')}</li><li>${t('ex.limit3')}</li><li>${t('ex.limit4')}</li>
     </ul>`);
-  return html`${parts}`;
+
+  return html`
+    ${plainAnswer(ex, stone)}
+    <details class="more">
+      <summary>${t('ex.detailsTitle')}</summary>
+      ${parts}
+    </details>`;
 }
 
 function firedCard(fired) {
@@ -323,7 +351,7 @@ views.today = () => {
         <h2>${t('today.stoneTitle')}</h2>
         ${ex.valid
           ? html`<p class="mono">${t('today.stoneLine', { size: t.num(ex.size), location: t(`loc.${ex.loc}`) })}</p>
-              ${ex.ureteralCohortApplies ? html`<p>${ex.sizeRange.low === ex.sizeRange.high ? t('ex.sizeSingle', { pct: ex.sizeRange.low }) : t('ex.sizeRange', ex.sizeRange)}</p>` : ''}
+              <p>${ex.outlook ? t(`ex.pass.${ex.outlook}`) : t('ex.pass.kidney')}</p>
               <a class="btn" href="#/stone">${t('stone.show')}</a>`
           : html`<p>${t('today.noStone')}</p><a class="btn btn-primary" href="#/stone">${t('today.addStone')}</a>`}
         <hr>
